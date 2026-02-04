@@ -35,7 +35,7 @@ export default function InsightPanel({ insights }) {
             {insights.map((insight, index) => (
                 <div
                     key={index}
-                    className={`glass-card p-6 border-l-4 ${getImportanceColor(insight.importance)} stagger-item hover:bg-slate-800/40 transition-all duration-300`}
+                    className={`glass-card p-6 border-l-4 ${getImportanceColor(insight.importance)} stagger-item hover:bg-slate-800/40 transition-all duration-500`}
                 >
                     <div className="flex items-start space-x-4">
                         <span className="text-3xl flex-shrink-0">{getCategoryIcon(insight.category)}</span>
@@ -49,8 +49,8 @@ export default function InsightPanel({ insights }) {
                                     {insight.category}
                                 </span>
                                 <span className={`px-3 py-1 rounded-full font-semibold ${insight.importance === 'high' ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50' :
-                                        insight.importance === 'medium' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50' :
-                                            'bg-blue-500/20 text-blue-300 border border-blue-500/50'
+                                    insight.importance === 'medium' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50' :
+                                        'bg-blue-500/20 text-blue-300 border border-blue-500/50'
                                     }`}>
                                     {insight.importance} priority
                                 </span>

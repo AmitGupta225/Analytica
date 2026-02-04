@@ -53,7 +53,7 @@ export default function Register() {
     return (
         <div className="min-h-screen flex items-center justify-center p-4">
             <div className="max-w-md w-full">
-                <div className="text-center mb-10 scale-in">
+                <div className="text-center mb-10 fade-in-up">
                     <div className="mb-6">
                         <span className="text-7xl glow float">⚡</span>
                     </div>
@@ -61,7 +61,7 @@ export default function Register() {
                     <p className="text-slate-400 text-lg">Start analyzing your data with AI</p>
                 </div>
 
-                <div className="glass-card p-8 slide-in-right neon-border">
+                <div className="glass-card p-8 fade-in-up neon-border">
                     <h2 className="text-2xl font-bold text-white mb-6">Create Account</h2>
 
                     {error && (

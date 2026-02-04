@@ -113,7 +113,7 @@ export default function ChartCard({ chart }) {
     }
 
     return (
-        <div className="glass-card p-6 scale-in hover:scale-105 transition-all duration-300 group">
+        <div className="border-gray-500/40 glass-card p-6 fade-in-up hover:scale-105 transition-all duration-500 group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-300 rounded-2xl -z-10"></div>
             <div className="mb-5">
                 <h3 className="text-lg font-bold text-white mb-1 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">

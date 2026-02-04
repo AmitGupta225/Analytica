@@ -59,13 +59,13 @@ export default function Upload() {
     return (
         <div className="min-h-screen p-8">
             <div className="max-w-6xl mx-auto">
-                <div className="mb-12 scale-in">
+                <div className="mb-12 fade-in-up">
                     <h1 className="text-5xl font-bold text-white mb-3 gradient-text">Upload Dataset</h1>
                     <p className="text-slate-400 text-lg">Upload your data to get AI-powered insights and visualizations</p>
                 </div>
 
                 {error && (
-                    <div className="mb-6 bg-rose-500/10 border border-rose-500/50 text-rose-300 px-6 py-4 rounded-xl slide-in-left flex items-center space-x-3">
+                    <div className="mb-6 bg-rose-500/10 border border-rose-500/50 text-rose-300 px-6 py-4 rounded-xl fade-in-up flex items-center space-x-3">
                         <span className="text-2xl">⚠️</span>
                         <span>{error}</span>
                     </div>
@@ -76,7 +76,7 @@ export default function Upload() {
                 </div>
 
                 {datasets.length > 0 && (
-                    <div className="slide-in-left">
+                    <div className="fade-in-up">
                         <h2 className="text-3xl font-bold text-white mb-8 flex items-center space-x-3">
                             <span>📁</span>
                             <span className="gradient-text">Your Datasets</span>
@@ -143,7 +143,7 @@ export default function Upload() {
                 )}
 
                 {datasets.length === 0 && !isUploading && (
-                    <div className="text-center text-slate-400 py-20 scale-in">
+                    <div className="text-center text-slate-400 py-20 fade-in-up">
                         <div className="mb-6">
                             <span className="text-6xl opacity-50">📂</span>
                         </div>

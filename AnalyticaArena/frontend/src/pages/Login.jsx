@@ -30,19 +30,15 @@ export default function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center p-4">
             <div className="max-w-md w-full">
-                <div className="text-center mb-10 scale-in">
+                <div className="text-center mb-10 fade-in-up">
                     <div className="mb-6">
                         <span className="text-7xl glow float">⚡</span>
                     </div>
                     <h1 className="text-6xl font-bold gradient-text mb-4">Analytica</h1>
                     <p className="text-slate-400 text-lg">AI-Powered Analytics Platform</p>
-                    <div className="mt-4 flex items-center justify-center space-x-2 text-sm text-slate-500">
-                        <span>Powered by</span>
-                        <span className="text-blue-400 font-semibold">Google Gemini AI</span>
-                    </div>
                 </div>
 
-                <div className="glass-card p-8 slide-in-left neon-border">
+                <div className="glass-card p-8 fade-in-up neon-border">
                     <h2 className="text-2xl font-bold text-white mb-6">Welcome Back</h2>
 
                     {error && (

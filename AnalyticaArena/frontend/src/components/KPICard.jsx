@@ -1,6 +1,6 @@
 export default function KPICard({ title, value, icon, trend }) {
     return (
-        <div className="glass-card p-6 scale-in hover:scale-105 transition-transform duration-300">
+        <div className="border-gray-500/40 backdrop-blur-md glass-card p-6 fade-in-up hover:scale-105 transition-all duration-500">
             <div className="flex items-center justify-between">
                 <div>
                     <p className="text-slate-400 text-sm font-medium mb-2 uppercase tracking-wider">{title}</p>

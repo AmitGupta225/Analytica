@@ -37,7 +37,7 @@ export default function UploadBox({ onUpload, isUploading }) {
 
     return (
         <div
-            className={`glass-card p-16 text-center cursor-pointer transition-all duration-300 neon-border ${dragActive ? 'border-blue-400 bg-blue-500/10 scale-105 shadow-2xl shadow-blue-500/50' : 'hover:border-blue-500/50 hover:bg-slate-800/40'
+            className={`glass-card p-16 text-center cursor-pointer transition-all duration-300 neon-border ${dragActive ? 'border-blue-400 bg-blue-500/10 scale-105 shadow-lg shadow-blue-500/20' : 'hover:border-blue-500/50 hover:bg-slate-800/40'
                 }`}
             onDragEnter={handleDrag}
             onDragLeave={handleDrag}
@@ -63,7 +63,7 @@ export default function UploadBox({ onUpload, isUploading }) {
                     </div>
                 </div>
             ) : (
-                <div className="scale-in">
+                <div className="fade-in-up">
                     <div className="mb-6 relative">
                         <svg className="mx-auto h-24 w-24 text-blue-400 glow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />

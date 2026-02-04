@@ -76,7 +76,7 @@ export default function Dashboard() {
         <div className="min-h-screen p-8">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="mb-10 flex items-center justify-between scale-in">
+                <div className="mb-10 flex items-center justify-between fade-in-up">
                     <div>
                         <h1 className="text-5xl font-bold text-white mb-3 gradient-text flex items-center space-x-3">
                             <span>📊</span>
