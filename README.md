@@ -256,32 +256,6 @@ Analytica/
 - [ ] Dark/Light theme toggle
 - [ ] Multi-language support
 
-## 🐛 Troubleshooting
-
-### MongoDB Connection Failed
-```bash
-# Check if MongoDB is running
-mongod --version
-
-# Or use MongoDB Atlas cloud connection
-# Update MONGODB_URI in .env
-```
-
-### Gemini API Error
-```bash
-# Verify API key is correct in backend/.env
-# Check API quota at https://ai.google.dev/
-```
-
-### Frontend Can't Connect to Backend
-```bash
-# Ensure backend is running on port 8000
-# Check CORS settings in backend/main.py
-```
-
-## 📄 License
-
-MIT License - feel free to use this project for learning or commercial purposes.
 
 ## 🤝 Contributing
 
