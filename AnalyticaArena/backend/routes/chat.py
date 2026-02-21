@@ -1,8 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from bson import ObjectId
 import pandas as pd
+import io
 from datetime import datetime
 from typing import List
+import os
 
 from routes.auth import get_current_user
 from models.chat_model import ChatQuery, ChatResponse, ChatSession, ChatMessage
@@ -10,11 +12,17 @@ from services.ai_service import ai_service
 from services.query_executor import QueryExecutor
 from services.chart_generator import ChartGenerator
 from utils.database import get_database
+from utils.limiter import limiter
 
 router = APIRouter(prefix="/api/chat", tags=["chat"])
 
+# Get rate limit from environment variable (default: 10 requests per minute)
+CHAT_RATE_LIMIT = os.getenv("CHAT_RATE_LIMIT", "10/minute")
+
 @router.post("/query", response_model=ChatResponse)
+@limiter.limit(CHAT_RATE_LIMIT)
 async def chat_query(
+    request: Request,
     query: ChatQuery,
     current_user: dict = Depends(get_current_user)
 ):
@@ -41,7 +49,7 @@ async def chat_query(
     
     # Load DataFrame
     try:
-        df = pd.read_json(dataset["data"], orient='records')
+        df = pd.read_json(io.StringIO(dataset["data"]), orient='records')
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

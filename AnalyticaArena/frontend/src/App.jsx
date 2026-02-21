@@ -57,7 +57,7 @@ function App() {
     const { token } = useAuth()
 
     return (
-        <Router>
+        <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <ParticleBackground />
             {token && <Navbar />}
             <div className={token ? "pt-16" : ""}>

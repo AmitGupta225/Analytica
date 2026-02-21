@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from bson import ObjectId
 import pandas as pd
+import io
 import json
 from datetime import datetime
 
@@ -42,7 +43,7 @@ async def analyze_dataset(
     
     # Load DataFrame from stored data
     try:
-        df = pd.read_json(dataset["data"], orient='records')
+        df = pd.read_json(io.StringIO(dataset["data"]), orient='records')
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
