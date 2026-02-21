@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from bson import ObjectId
 import pandas as pd
+import io
 from datetime import datetime
 from typing import List
 import os
@@ -48,7 +49,7 @@ async def chat_query(
     
     # Load DataFrame
     try:
-        df = pd.read_json(dataset["data"], orient='records')
+        df = pd.read_json(io.StringIO(dataset["data"]), orient='records')
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

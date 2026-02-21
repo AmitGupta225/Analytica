@@ -103,7 +103,7 @@ async def upload_dataset(
         "file_type": file_ext.replace('.', ''),
         "num_rows": len(df),
         "num_columns": len(df.columns),
-        "columns": [col.dict() for col in columns_info],
+        "columns": [col.model_dump() for col in columns_info],
         "data": dataset_json,  # Store actual data
         "uploaded_at": datetime.utcnow(),
         "is_analyzed": False
