@@ -9,50 +9,33 @@ from slowapi.errors import RateLimitExceeded
 from utils.database import connect_to_mongo, close_mongo_connection
 from utils.limiter import limiter
 
-# Load environment variables
 load_dotenv()
-
-# Import routes
 from routes import auth, upload, analysis, chat
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Lifecycle manager for the application"""
-    # Startup
     await connect_to_mongo()
     yield
-    # Shutdown
     await close_mongo_connection()
-
-# Create FastAPI app
 app = FastAPI(
     title="Analytica API",
     description="GenAI-Powered Analytics Platform API",
     version="1.0.0",
     lifespan=lifespan
 )
-
-# Attach rate limiter to app
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
-
-# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://analytica-seven.vercel.app",           # production frontend
         os.getenv("FRONTEND_URL", "http://localhost:5173"),
         "http://localhost:3000",
-        "http://localhost:5173",
-        "http://localhost:5174",
     ],
     allow_origin_regex=r"https://analytica-seven.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Include routers
 app.include_router(auth.router)
 app.include_router(upload.router)
 app.include_router(analysis.router)

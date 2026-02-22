@@ -110,13 +110,12 @@ async def chat_query(
         
         # If result is a DataFrame or Series, use it for chart
         if result_type in ["DataFrame", "Series"]:
-            # Convert result to DataFrame if needed
             if isinstance(result_data, list):
                 result_df = pd.DataFrame(result_data)
             elif isinstance(result_data, dict):
                 result_df = pd.DataFrame([result_data])
             else:
-                result_df = df  # Use original dataframe
+                result_df = df 
             
             # Generate chart data
             if len(result_df) > 0:
@@ -128,10 +127,8 @@ async def chat_query(
                     "data": ChartGenerator.generate_chart_data(result_df, chart_spec)
                 }
     
-    # Create response message
     formatted_result = QueryExecutor.format_result_for_display(result_data, result_type)
-    
-    # Save to chat history
+
     try:
         chat_message_user = {
             "role": "user",
