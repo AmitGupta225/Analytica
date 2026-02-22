@@ -43,7 +43,6 @@ frontend/.vite/
 *.csv
 *.xlsx
 *.xls
-*.json
 uploads/
 datasets/
 

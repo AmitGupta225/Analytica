@@ -1,7 +1,7 @@
 export default function LandingPage({ onOpenLogin, onOpenRegister }) {
     return (
-        <div className="min-h-screen flex items-center justify-center p-4">
-            <div className="max-w-4xl w-full text-center">
+        <div className="h-screen overflow-y-auto flex items-center justify-center p-4">
+            <div className="max-w-4xl w-full text-center my-auto">
                 <div className="mb-10 fade-in-up">
                     <div className="mb-8">
                         <span className="text-9xl glow float">⚡</span>

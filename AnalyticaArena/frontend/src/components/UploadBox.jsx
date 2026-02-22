@@ -37,7 +37,7 @@ export default function UploadBox({ onUpload, isUploading }) {
 
     return (
         <div
-            className={`glass-card p-16 text-center cursor-pointer transition-all duration-300 neon-border ${dragActive ? 'border-blue-400 bg-blue-500/10 scale-105 shadow-lg shadow-blue-500/20' : 'hover:border-blue-500/50 hover:bg-slate-800/40'
+            className={`glass-card p-16 text-center cursor-pointer transition-all duration-300 ${dragActive ? 'border-blue-400 bg-blue-500/10 scale-105 shadow-lg shadow-blue-500/20' : 'hover:border-blue-500/50 hover:bg-slate-800/40'
                 }`}
             onDragEnter={handleDrag}
             onDragLeave={handleDrag}
